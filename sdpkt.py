@@ -28,5 +28,5 @@ if (args.tcp):
 if (args.udp):
     print("Sending UDP packets to " + ip + " every " + str(interval) + "s.") 
     while 1:
-        send(IP(dst=ip)/UDP(dport=port)/Raw(load="123"))
+        send(IP(dst=ip)/UDP(dport=port, sport=50000)/Raw(load="123"))
         time.sleep(interval)
